@@ -31,7 +31,7 @@ const Navbar = () => {
                             <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
-                    <button className='button-primary'>Search</button>
+                    <button className='btn btn-secondary'>Search</button>
                 </div>
             </div>
         </nav>
