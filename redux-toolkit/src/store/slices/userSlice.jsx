@@ -16,7 +16,7 @@ const userSlice = createSlice({
             // splice method: array.splice(start, deleteCount, item1, item2, ...)
             // start : index at which to start changing  the array ,
             // deleteCount : the number of element to remove,
-            // item1,item2,...:  the element to add to the array startng at the start index.
+            // item1,item2,...:  the element to add to the array startng at the start
             state.splice(action.payload, 1);
         },
         remoeAllUsers(state, action) { },
