@@ -6,7 +6,7 @@ import { addUser, removeUser } from '../store/slices/userSlice'
 import { IoTrashBinOutline } from "react-icons/io5";
 
 const UserDetail = () => {
-    // this state means u can access the global state or main store state
+    // this state means u can access the global state or main store state...
     const data = useSelector((state) => {
         return state.users
     })
