@@ -9,7 +9,7 @@ const userSlice = createSlice({
         addUser(state, action) {
             // payload u can give any name like data or etc
             state.push(action.payload)
-            console.log(`data store in state successfulyy::: ${action.payload}`)
+            // console.log(`data store in state successfulyy::: ${action.payload}`)
         },
         removeUser(state, action) {
             // 1 means remove that elemet or name if there is 2 then it will remove that name and its next name 
@@ -18,12 +18,27 @@ const userSlice = createSlice({
             // deleteCount : the number of element to remove,
             // item1,item2,...:  the element to add to the array startng at the start
             state.splice(action.payload, 1);
+
+            // 2nd method 
+            // return state.filter((user) => user.id !== action.payload);
         },
-        remoeAllUsers(state, action) { },
+        removeAllUsers(state, action) {
+            return [];
+        },
     },
+    // Note
+    // if action is supposed to be handle by one reducer: use "reducers".
+    // if action is supposed to be handle by multiple reducers: use "extraReducers".
+    // extraReducers(builder) {
+    //     builder.addCase(userSlice.actions.removeAllUsers, () => {
+    //         return [];
+    //     })
+    // }
 
 })
 
 export default userSlice.reducer;
 // this is called actions creaters with help of this we can export our mini reducers 
-export const { addUser, removeUser, remoeAllUsers } = userSlice.actions;
+export const { addUser, removeUser, removeAllUsers } = userSlice.actions;
+
+
