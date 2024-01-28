@@ -8,7 +8,7 @@ const AdminDetail = () => {
   // this state means u can access the global state or main store state...
   const adminState = useSelector((state) => state.admin);
   const data = useSelector((state) => {
-    return state.users
+    return state.users;
   })
   const dispatch = useDispatch()
   const addNewUser = (name) => {

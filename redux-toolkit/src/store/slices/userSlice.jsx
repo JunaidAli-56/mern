@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { removeAllUsers } from "../actions";
 
 const userSlice = createSlice({
     name: 'user',
@@ -22,23 +23,31 @@ const userSlice = createSlice({
             // 2nd method 
             // return state.filter((user) => user.id !== action.payload);
         },
-        removeAllUsers(state, action) {
+        removeAllUsers() {
             return [];
         },
     },
     // Note
     // if action is supposed to be handle by one reducer: use "reducers".
     // if action is supposed to be handle by multiple reducers: use "extraReducers".
+
     // extraReducers(builder) {
     //     builder.addCase(userSlice.actions.removeAllUsers, () => {
     //         return [];
     //     })
-    // }
+    // },
 
+    //Note if anyone delete the removeAllUsers reducer then our extraReducer is nothing its failed thats why we create actions its totaly independent;
+    extraReducers(builder) {
+        builder.addCase(removeAllUsers, () => {
+            return [];
+        })
+    }
 })
 
 export default userSlice.reducer;
 // this is called actions creaters with help of this we can export our mini reducers 
-export const { addUser, removeUser, removeAllUsers } = userSlice.actions;
+// export const { addUser, removeUser, removeAllUsers } = userSlice.actions;
+export const { addUser, removeUser } = userSlice.actions; // it will use when we use action creater
 
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import { fakeUserData } from '../api'
 import { useDispatch, useSelector } from 'react-redux'
-import { addUser, removeAllUsers, removeUser } from '../store/slices/userSlice'
+import { addUser, removeUser } from '../store/slices/userSlice'
+import { removeAllUsers } from '../store/actions';
 import { IoTrashBinOutline } from "react-icons/io5";
 
 const UserDetail = () => {
@@ -28,8 +29,8 @@ const UserDetail = () => {
                     <div>
                         <div className='d-flex justify-content-between align-items-center'>
                             <div>
-                            <h1>User Data..</h1>
-                            <p>Practice Redux ToolKit</p>
+                                <h1>User Data..</h1>
+                                <p>Practice Redux ToolKit</p>
                             </div>
                             <button className='btn btn-secondary' onClick={() => { addNewUser(fakeUserData()) }}>Add user</button>
                         </div>

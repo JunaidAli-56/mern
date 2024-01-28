@@ -5,7 +5,7 @@ import adminSlice from './slices/adminSlice';
 const store = configureStore({
     reducer: {
         users: userSlice,
-        admin: adminSlice
+        // admin: adminSlice
     },
 })
 
